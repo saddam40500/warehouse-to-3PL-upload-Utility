@@ -36,6 +36,5 @@ Proposed Process:
  
 Benefits:
 
-o	We can eliminate the support request ticket (min 22 tickets per month)
-o	Efficiency: Drastically reduce the time required for allocation processes.
-o	Accessibility: Enable Inventory Planners to directly upload files from any location.
+Efficiency: Drastically reduce the time required for allocation processes.
+Accessibility: Enable Inventory Planners to directly upload files from any location.
