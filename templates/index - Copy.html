@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse to 3PL Bulk Allocations</title>
+</head>
+<body>
+    <h1>Warehouse to 3PL Bulk Allocations</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xls, .xlsx" required>
+        <button type="submit">Upload</button>
+    </form>
+    <ul id="fileList"></ul>
+    <script>
+        // Function to fetch and display file list
+        function getFileList() {
+            var fileListContainer = document.getElementById('fileList');
+            
+            // Replace 'YOUR_FOLDER_PATH' with the path to your folder
+            var folderPath = window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+    
+            fetch('/get-files?folderPath=' + folderPath)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(function (file) {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = file;
+                        fileListContainer.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    
+        // Call the function to fetch and display file list
+        getFileList();
+    </script>
+</body>
+</html>

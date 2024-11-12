@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Allocations</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //alert('Connecting websocket');
+            var socket = io.connect('http://localhost:5000');
+            alert('Connected websocket');
+            socket.on('status message', function (message) {
+                alert(message);
+            });
+
+            socket.on('after connect', function(msg) {
+               console.log('After connect', msg);
+           });
+
+        });
+        
+    </script>
+</head>
+<body>
+    <h1>Warehouse to 3PL Bulk Allocations</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xls, .xlsx" required>
+        <button type="submit">Upload</button>
+    </form>
+    <ul id="fileList"></ul>
+    <ul id="messages"></ul>
+    
+    
+</body>
+</html>
