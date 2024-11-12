@@ -21,6 +21,9 @@ Current Process:
 8.	Above steps has to be followed for all the sheets inside the uploaded file.
 9.	When all the sheets are completed, support team share the allocation numbers with IP and close the ticket.
 
+    ![image](https://github.com/user-attachments/assets/c50a340a-1882-4d30-b40b-9ac53886570b)
+
+
 Proposed Process:
 
 1.	Instead of raising a support ticket, Inventory planner can directly access the Warehouse to 3PL bulk upload utility through a web URL.
@@ -33,6 +36,9 @@ Proposed Process:
 8.	If any error found it will show the error details with filename, row number & column name to user.
 9.	When no errors found allocation file will be created in extracts folder with allocation number as filename.
 10.	This process will run in a loop for all files and shows a success message.
+
+    ![image](https://github.com/user-attachments/assets/9d3eab16-47e6-484d-937b-f12225f95d99)
+
  
 Benefits:
 
